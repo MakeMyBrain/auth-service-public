@@ -7,7 +7,7 @@
     "setupenv": "npm i",
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "build": "npm run build"
+    "build": "npm run"
     
   },
   "keywords": [],
