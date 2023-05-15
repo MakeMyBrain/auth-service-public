@@ -1,6 +1,6 @@
-# Development guide
+# Development guide[Linux only]
 
-## Clone the repo.
+## Clone the repo
 
 ```bash
 git clone https://github.com/MakeMyBrain/auth-service
