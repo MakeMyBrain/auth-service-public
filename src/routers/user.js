@@ -19,6 +19,10 @@ router.post("/users/signup", async (req, res) => {
       specialChars: false,
     });
     user = { ...user, otp: otp };
+    const userFound = await User.findByCredentials(user.email);
+    if (userFound) {
+      res.status(400).send("User already exist!");
+    }
     const userInDB = new User(user);
     await userInDB.save();
     await sendOTP(user.email, otp);
