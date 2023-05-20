@@ -6,7 +6,7 @@ const otpGenerator = require("otp-generator");
 const { sendOTP } = require("../emails/account");
 
 router.get("/", async (req, res) => {
-  res.send("Auth server live...");
+  res.send("auth server live...");
 });
 
 //signUp
@@ -19,7 +19,7 @@ router.post("/users/signup", async (req, res) => {
       specialChars: false,
     });
     user = { ...user, otp: otp };
-    const userFound = await User.findByCredentials(user.email);
+    const userFound = await User.findOne({email: user.email});
     if (userFound) {
       res.status(400).send("User already exist!");
     }
