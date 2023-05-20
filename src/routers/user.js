@@ -6,7 +6,7 @@ const otpGenerator = require("otp-generator");
 const { sendOTP } = require("../emails/account");
 
 router.get("/", async (req, res) => {
-  res.send("auth server live...");
+  res.send("Auth server live...");
 });
 
 //signUp
